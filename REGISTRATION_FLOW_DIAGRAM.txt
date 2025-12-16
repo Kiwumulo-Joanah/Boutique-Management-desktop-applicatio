@@ -1,0 +1,241 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                    JK'S BOUTIQUE - REGISTRATION FLOW                       ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                          APPLICATION STARTS                                  │
+│                                  ↓                                          │
+│                      ┌───────────────────────┐                             │
+│                      │    LOGIN PAGE         │                             │
+│                      │                       │                             │
+│                      │  Username: [_______]  │                             │
+│                      │  Password: [_______]  │                             │
+│                      │                       │                             │
+│                      │    [  Login  ]        │                             │
+│                      │                       │                             │
+│                      │  Don't have account?  │                             │
+│                      │  [Register here] ←────┼─── CLICK THIS!            │
+│                      └───────────────────────┘                             │
+│                                  ↓                                          │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                      REGISTRATION PAGE OPENS                                 │
+│                                  ↓                                          │
+│          ┌────────────────────────────────────────────┐                    │
+│          │   JK'S BOUTIQUE & KID'S WEAR               │                    │
+│          │        Create New Account                   │                    │
+│          │                                            │                    │
+│          │  Full Name:                                │                    │
+│          │  [________________________________]        │                    │
+│          │                                            │                    │
+│          │  Email:                                    │                    │
+│          │  [________________________________]        │                    │
+│          │                                            │                    │
+│          │  Username:                                 │                    │
+│          │  [________________________________]        │                    │
+│          │                                            │                    │
+│          │  Password:                                 │                    │
+│          │  [********************************]        │                    │
+│          │                                            │                    │
+│          │  Confirm Password:                         │                    │
+│          │  [********************************]        │                    │
+│          │                                            │                    │
+│          │          [   Register   ]                  │                    │
+│          │                                            │                    │
+│          │      [← Back to Login]                     │                    │
+│          └────────────────────────────────────────────┘                    │
+│                                  ↓                                          │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                         VALIDATION CHECKS                                    │
+│                                  ↓                                          │
+│         ┌────────────────────────────────────────┐                         │
+│         │  ✓ All fields filled?                  │                         │
+│         │  ✓ Username ≥ 3 characters?            │                         │
+│         │  ✓ Password ≥ 6 characters?            │                         │
+│         │  ✓ Passwords match?                    │                         │
+│         │  ✓ Valid email format?                 │                         │
+│         │  ✓ Username available?                 │                         │
+│         └────────────────────────────────────────┘                         │
+│                    ↓                    ↓                                   │
+│                  PASS                  FAIL                                 │
+│                    ↓                    ↓                                   │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+        PASS ↓                                    FAIL ↓
+
+┌──────────────────────────┐            ┌──────────────────────────────┐
+│   SAVE TO DATABASE       │            │   SHOW ERROR MESSAGE         │
+│                          │            │                              │
+│   ┌──────────────────┐   │            │  ❌ Username too short!      │
+│   │  users table     │   │            │  ❌ Passwords don't match!   │
+│   ├──────────────────┤   │            │  ❌ Email invalid!           │
+│   │ user_id          │   │            │  ❌ Username exists!         │
+│   │ username         │   │            │                              │
+│   │ password         │   │            │  User stays on form          │
+│   │ full_name        │   │            │  Can correct and retry       │
+│   │ email            │   │            │                              │
+│   │ created_at       │   │            └──────────────────────────────┘
+│   └──────────────────┘   │                         ↑
+│                          │                         │
+│   Record saved! ✓        │                    FIX & RETRY
+│                          │                         │
+└──────────────────────────┘                         │
+            ↓                                        │
+                                                     │
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                         SUCCESS MESSAGE                                      │
+│                                                                             │
+│              ┌────────────────────────────────────────┐                     │
+│              │  ✓ Account created successfully!       │                     │
+│              │    Welcome, [Full Name]!               │                     │
+│              │                                        │                     │
+│              │           [    OK    ]                 │                     │
+│              └────────────────────────────────────────┘                     │
+│                                  ↓                                          │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                  ↓
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                    AUTO-REDIRECT TO LOGIN PAGE                               │
+│                                  ↓                                          │
+│                      ┌───────────────────────┐                             │
+│                      │    LOGIN PAGE         │                             │
+│                      │                       │                             │
+│                      │  Username: [_______]  │ ← Enter your new username   │
+│                      │  Password: [_______]  │ ← Enter your password       │
+│                      │                       │                             │
+│                      │    [  Login  ]        │ ← Click to login            │
+│                      │                       │                             │
+│                      └───────────────────────┘                             │
+│                                  ↓                                          │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                  ↓
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                         AUTHENTICATION                                       │
+│                                  ↓                                          │
+│              Database checks username & password                             │
+│                                  ↓                                          │
+│                         ┌────────────────┐                                  │
+│                    VALID? │              │ INVALID?                         │
+│                           └────────────────┘                                │
+│                      YES ↓              ↓ NO                                │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+     YES ↓                                          NO ↓
+
+┌──────────────────────────┐            ┌────────────────────────────────┐
+│   LOGIN SUCCESS!         │            │   LOGIN FAILED                 │
+│                          │            │                                │
+│   Redirect to:           │            │   ❌ Invalid username          │
+│                          │            │      or password!              │
+│   ┌────────────────────┐ │            │                                │
+│   │    DASHBOARD       │ │            │   User stays on login page     │
+│   │                    │ │            │   Can try again                │
+│   │  Total Products    │ │            └────────────────────────────────┘
+│   │  Inventory Value   │ │
+│   │  Low Stock Items   │ │
+│   │                    │ │
+│   │  [Add Stock]       │ │
+│   │  [View Inventory]  │ │
+│   │  [Generate Receipt]│ │
+│   └────────────────────┘ │
+│                          │
+│   Full app access! ✓     │
+│                          │
+└──────────────────────────┘
+
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║                         KEY FEATURES                                        ║
+╠════════════════════════════════════════════════════════════════════════════╣
+║                                                                            ║
+║  ✅ REGISTRATION FIELDS                    ✅ VALIDATION RULES              ║
+║     • Full Name                                • All fields required       ║
+║     • Email Address                            • Username ≥ 3 chars       ║
+║     • Username                                 • Password ≥ 6 chars       ║
+║     • Password (masked)                        • Passwords must match     ║
+║     • Confirm Password (masked)                • Valid email format       ║
+║                                                • Unique username          ║
+║                                                                            ║
+║  ✅ USER EXPERIENCE                        ✅ SECURITY                     ║
+║     • Clear error messages                     • Password masking         ║
+║     • Auto-redirect after success              • Unique usernames         ║
+║     • Form clears after submit                 • Database storage         ║
+║     • Back to login button                     • Login authentication     ║
+║     • Enter key support                        • Username validation      ║
+║                                                                            ║
+║  ✅ DATABASE STORAGE                       ✅ DESIGN                       ║
+║     • SQLite database (boutique.db)            • Professional colors      ║
+║     • users table                              • Modern flat design       ║
+║     • Auto-generated user_id                   • Centered layout          ║
+║     • Timestamp on registration                • Company branding         ║
+║     • Permanent storage                        • Responsive interface     ║
+║                                                                            ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║                    EXAMPLE: SUCCESSFUL REGISTRATION                         ║
+╠════════════════════════════════════════════════════════════════════════════╣
+║                                                                            ║
+║   Full Name:           Kiwumulo Joanah                                     ║
+║   Email:               joanah@jkboutique.com                              ║
+║   Username:            joanah123                                           ║
+║   Password:            MySecure@Pass2025                                   ║
+║   Confirm Password:    MySecure@Pass2025                                   ║
+║                                                                            ║
+║   [Click Register]                                                         ║
+║                                                                            ║
+║   ↓                                                                        ║
+║                                                                            ║
+║   ✓ Validation passed                                                      ║
+║   ✓ Saved to database                                                      ║
+║   ✓ "Account created successfully! Welcome, Kiwumulo Joanah!"             ║
+║   ✓ Redirected to login                                                    ║
+║                                                                            ║
+║   Now login with:                                                          ║
+║   Username: joanah123                                                      ║
+║   Password: MySecure@Pass2025                                              ║
+║                                                                            ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║                         HOW TO ACCESS                                       ║
+╠════════════════════════════════════════════════════════════════════════════╣
+║                                                                            ║
+║  1. Run the application:                                                   ║
+║     • Double-click run_app.bat                                             ║
+║     • OR run: python main.py                                               ║
+║                                                                            ║
+║  2. On the Login Page:                                                     ║
+║     • Look at the bottom                                                   ║
+║     • See "Don't have an account?"                                         ║
+║     • Click the blue link "Register here"                                  ║
+║                                                                            ║
+║  3. Fill the Registration Form:                                            ║
+║     • Enter all 5 required fields                                          ║
+║     • Make sure passwords match                                            ║
+║     • Use valid email format                                               ║
+║                                                                            ║
+║  4. Submit:                                                                ║
+║     • Click "Register" button                                              ║
+║     • OR press Enter key                                                   ║
+║                                                                            ║
+║  5. Success!                                                               ║
+║     • See welcome message                                                  ║
+║     • Automatically sent to login                                          ║
+║     • Login with your new credentials                                      ║
+║                                                                            ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+═══════════════════════════════════════════════════════════════════════════════
+
+                    ✅ REGISTRATION SYSTEM COMPLETE!
+
+         Your application has a fully working registration page
+                  where users register before logging in!
+
+═══════════════════════════════════════════════════════════════════════════════

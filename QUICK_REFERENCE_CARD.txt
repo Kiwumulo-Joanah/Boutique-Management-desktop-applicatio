@@ -1,0 +1,112 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                                                                              ║
+║                    📋 QUICK REFERENCE CARD                                  ║
+║                 JK's Boutique - Invoice System                             ║
+║                                                                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+🚀 TO RUN APPLICATION:
+   Double-click: dist\JK_Boutique.exe
+
+🔑 DEFAULT LOGIN:
+   Username: owner
+   Password: admin123
+
+📝 TO REGISTER NEW USER:
+   Click BIG BLUE "📝 REGISTER HERE" button on login page
+
+═══════════════════════════════════════════════════════════════════════════════
+✅ COMPLETE WORKFLOW
+═══════════════════════════════════════════════════════════════════════════════
+
+1. ADD PRODUCTS (Database Storage)
+   Dashboard → Add New Stock
+   → Enter: Name, Price, Quantity
+   → Click "Add Product"
+   ✅ Saved to boutique.db!
+
+2. GENERATE PROFESSIONAL INVOICE
+   Dashboard → Generate Receipt
+   → Select products, add to cart
+   → Click "📄 Generate Receipt" (green button)
+   → Click "Yes" to open invoice
+   ✅ Professional PDF opens!
+
+3. VIEW & DOWNLOAD PAST INVOICES
+   Reports → Receipt History
+   → Double-click any invoice to open
+   → Or click "📥 Open Selected Invoice"
+   ✅ All invoices downloadable!
+
+═══════════════════════════════════════════════════════════════════════════════
+💾 DATABASE & FILES
+═══════════════════════════════════════════════════════════════════════════════
+
+📁 Database:           boutique.db (SQLite)
+📁 Invoices Folder:    dist\receipts\
+📁 Invoice Format:     invoice_00001_20251216_143025.pdf
+
+Tables in Database:
+  • products - All inventory items
+  • users - Registered users
+  • receipts - Invoice records
+  • receipt_items - Invoice line items
+
+═══════════════════════════════════════════════════════════════════════════════
+🎯 KEY FEATURES
+═══════════════════════════════════════════════════════════════════════════════
+
+✅ Database storage (all data persists)
+✅ Professional invoices (branded PDFs)
+✅ One-click download (auto-open)
+✅ Invoice history (view all sales)
+✅ Inventory tracking (auto-update)
+✅ User registration (scrollable)
+✅ Reports system (3 types)
+
+═══════════════════════════════════════════════════════════════════════════════
+🛠️ TROUBLESHOOTING
+═══════════════════════════════════════════════════════════════════════════════
+
+Problem: Invoice not generating?
+→ Add items to cart first
+→ Check products exist in inventory
+→ Look for error messages
+
+Problem: Can't open invoice?
+→ Make sure PDF viewer installed
+→ Use "Open Invoices Folder" button
+→ Manually navigate to receipts/
+
+Problem: Can't find database?
+→ Look for boutique.db in same folder as .exe
+→ It auto-creates on first run
+
+═══════════════════════════════════════════════════════════════════════════════
+📞 QUICK TIPS
+═══════════════════════════════════════════════════════════════════════════════
+
+💡 Invoice History has 3 ways to open:
+   1. Double-click invoice row
+   2. Select + click "Open Selected Invoice"
+   3. Click "Open Invoices Folder"
+
+💡 Registration page scrolls with mouse wheel
+
+💡 All sales automatically update inventory
+
+💡 Invoice numbers auto-increment (00001, 00002, ...)
+
+═══════════════════════════════════════════════════════════════════════════════
+📚 DOCUMENTATION
+═══════════════════════════════════════════════════════════════════════════════
+
+Complete Guide:        COMPLETE_INVOICE_GUIDE.md
+Quick Start:           QUICK_START.md
+User Manual:           USER_GUIDE.md
+Full Summary:          ALL_FEATURES_SUMMARY.txt
+Testing:               TESTING_CHECKLIST.txt
+
+═══════════════════════════════════════════════════════════════════════════════
+
+Version 3.0 | December 16, 2025 | Status: ✅ READY
